@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 from ursina import *
 from ursina.prefabs.first_person_controller \
 import FirstPersonController
@@ -14,6 +5,11 @@ import FirstPersonController
 app = Ursina()
 Sky()
 player = FirstPersonController()
+
+
+
+window.fullscreen = True
+boxes = []
 
 for n in range(15):
   for k in range(15):
@@ -26,19 +22,30 @@ for n in range(15):
       origin_y= 0.5,
       parent= scene
     )
+    boxes.append(box)
+
+
+def input(key):
+  for box in boxes:
+    if box.hovered:
+      if key == 'left mouse down':
+        newBox = Button(
+          position= box.position+mouse.normal,
+          color=color.orange,
+          highlight_color=color.lime,
+          model='cube',
+          texture='white_cube',
+          origin_y=0.5,
+          parent=scene
+        )
+        boxes.append(newBox)
+      if key == 'right mouse down':
+        boxes.remove(box)
+        destroy(box)
+
 
 
 app.run()
-
-
-
-
-
-
-
-
-
-
 
 
 
