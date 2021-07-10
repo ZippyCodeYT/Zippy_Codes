@@ -8,12 +8,9 @@ pendown()
 bgcolor('black')
 color('green')
 speed(11)
-a = 0
 b = 0
 while b < 200:
-  forward(a)
   right(b)
-  a = a + 3
+  forward(b * 3)
   b = b + 1
-
 done()
