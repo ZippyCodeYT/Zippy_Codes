@@ -17,39 +17,3 @@ while b < 200:
   b = b + 1
 
 done()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-from turtle import *
-speed(11)
-color('green')
-for i in range(360):
-  forward(i)
-  left(59)
-'''
