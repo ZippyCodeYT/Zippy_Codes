@@ -5,7 +5,7 @@ from ursina.prefabs.first_person_controller \
 app = Ursina()
 Sky()
 player = FirstPersonController()
-
+window.fullscreen = True
 arm = Entity(
   parent=camera.ui,
   model='cube',
@@ -31,11 +31,16 @@ for n in range(15):
       color=color.orange,
       highlight_color=color.lime,
       model='cube',
-      texture='white_cube',
+      texture=
+      load_texture('assets\wood'),
       origin_y=0.5,
       parent=scene
     )
     boxes.append(box)
+
+
+
+
 
 
 def input(key):
@@ -43,11 +48,13 @@ def input(key):
     if box.hovered:
       if key == 'left mouse down':
         newBox = Button(
-          position=box.position + mouse.normal,
+          position=
+          box.position + mouse.normal,
           color=color.orange,
           highlight_color=color.lime,
           model='cube',
-          texture='white_cube',
+          texture=
+          load_texture('assets\wood'),
           origin_y=0.5,
           parent=scene
         )
