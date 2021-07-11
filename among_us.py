@@ -1,6 +1,4 @@
 from turtle import *
-window = Screen()
-window.setup(width=1.0, height=1.0, startx=None, starty=None)
 hideturtle()
 pensize(10)
 fillcolor('green')
