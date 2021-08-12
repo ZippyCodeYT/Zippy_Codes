@@ -1,0 +1,58 @@
+from ursina import *
+from ursina.prefabs.first_person_controller \
+  import FirstPersonController
+
+app = Ursina()
+Sky()
+player = FirstPersonController()
+window.fullscreen = True
+
+
+
+swappies = [None, None]
+pos = 0
+
+obj1 = Entity(model = 'plane', color = color.red, position = (6, 2, 2),collider='box')
+obj2 = Entity(model = 'cube', color = color.green, position = (3, 2, 3), collider='box')
+obj3 = Entity(model = 'cube', color = color.orange, position = (2, 2, 6), collider='box')
+objects = [obj1, obj2, obj3]
+
+
+def update():
+  if held_keys['f']:
+    print(swappies)
+    if not None in swappies:
+      swappies[0].position, swappies[1].position = swappies[1].position, swappies[0].position
+
+boxes = []
+
+for n in range(15):
+  for k in range(15):
+    box = Button(
+      position=(k, 0, n),
+      color=color.orange,
+      highlight_color=color.lime,
+      model='cube',
+      texture=
+      load_texture('assets\wood'),
+      origin_y=0.5,
+      parent=scene
+    )
+    boxes.append(box)
+
+
+
+
+
+
+def input(key):
+  global pos
+  if key == 'q':
+    quit()
+  for o in (objects + boxes):
+    if o.hovered:
+      if key == 'left mouse down':
+        swappies[pos] = o
+        pos = (pos + 1) % 2
+
+app.run()
