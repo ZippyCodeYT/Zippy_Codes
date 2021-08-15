@@ -6,7 +6,7 @@ app = Ursina()
 Sky(texture='sky_sunset')
 player = FirstPersonController()
 
-sword = Entity(model='blade', texture='assets\sword', rotation=(30,-40),
+sword = Entity(model='assets\\blade', texture='assets\sword', rotation=(30,-40),
                position=(0.6,-0.6), parent=camera.ui, scale=(0.2,0.15))
 
 def update():
