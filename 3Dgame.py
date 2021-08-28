@@ -13,6 +13,7 @@ ground = Entity(model= 'plane',
 player = FirstPersonController(
   collider='box'
 )
+player.cursor.visible = False
 
 myBox = Entity(model= 'cube',
                color= color.black,
@@ -62,6 +63,19 @@ pillar = Entity(
 )
 
 
+jump = Audio(
+  'assets\jump.mp3',
+  loop = False,
+  autoplay = False
+)
+
+walk = Audio(
+  'assets\walk.mp3',
+  loop = False,
+  autoplay = False
+)
+
+
 def update():
   global lvl
   i = 0
@@ -75,11 +89,23 @@ def update():
   if player.z > 56 and lvl == 1:
     lvl = 2
     sky.texture = 'sky_sunset'
+  walking = held_keys['a'] or \
+          held_keys['d'] or \
+          held_keys['w'] or \
+          held_keys['s']
+  if walking and player.grounded:
+    if not walk.playing:
+      walk.play()
+  else:
+    if walk.playing:
+      walk.stop()
 
 
 def input(key):
   if key == 'q':
     quit()
+  if key == 'space':
+    if not jump.playing:
+      jump.play()
 
 app.run()
-
