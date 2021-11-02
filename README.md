@@ -1,8 +1,11 @@
 # Zippy_Codes
 Codes I used in my YouTube videos
 
-All used assets (e.g. sprites, 3d objects) are in the assets folder. You can download simple the whole assets folder.
+To run the games you have to install the ursina module. 
+In case you're using PyCharm, I made a tutorial on how to install ursina
+(https://www.youtube.com/watch?v=esDfJFi7igQ)
 
+All used assets (e.g. sprites, 3d objects) are in the assets folder. You can download simple the whole assets folder.
 
 
 Credits for the Robots 3D Animation Code:
