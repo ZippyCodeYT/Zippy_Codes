@@ -7,6 +7,7 @@ ground = Entity(model='cube', texture='grass',rotation=(90,0,0),scale=(5,1,5), z
 apple = Entity(model='cube', texture='assets\\apple', scale=0.4, position=(1,-1,-1), collider='mesh')
 body = [Entity(model='cube', scale =0.2, texture='assets\\body') for i in range(14)]
 
+camera.orthographic = True
 camera.fov = 8
 
 from random import randint
